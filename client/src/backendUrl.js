@@ -1,4 +1,3 @@
-// const backendUrl = 'https://stackuflow.herokuapp.com';
-const backendUrl = "http://localhost:4000";
+const backendUrl = "https://uncaught-error.herokuapp.com/";
 
 export default backendUrl;
