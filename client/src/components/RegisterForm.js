@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { useMutation } from '@apollo/client';
-import { REGISTER_USER } from '../graphql/mutations';
-import { useAuthContext } from '../context/auth';
-import { useStateContext } from '../context/state';
-import ErrorMessage from './ErrorMessage';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import SofLogo from '../svg/stack-overflow.svg';
-import { getErrorMsg } from '../utils/helperFuncs';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@apollo/client";
+import { REGISTER_USER } from "../graphql/mutations";
+import { useAuthContext } from "../context/auth";
+import { useStateContext } from "../context/state";
+import ErrorMessage from "./ErrorMessage";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import SofLogo from "../svg/ERRORLOGO.svg";
+import { getErrorMsg } from "../utils/helperFuncs";
 
 import {
   TextField,
@@ -17,33 +17,33 @@ import {
   InputAdornment,
   IconButton,
   Link,
-} from '@material-ui/core';
-import { useAuthFormStyles } from '../styles/muiStyles';
-import PersonIcon from '@material-ui/icons/Person';
-import LockIcon from '@material-ui/icons/Lock';
-import EnhancedEncryptionIcon from '@material-ui/icons/EnhancedEncryption';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+} from "@material-ui/core";
+import { useAuthFormStyles } from "../styles/muiStyles";
+import PersonIcon from "@material-ui/icons/Person";
+import LockIcon from "@material-ui/icons/Lock";
+import EnhancedEncryptionIcon from "@material-ui/icons/EnhancedEncryption";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 
 const validationSchema = yup.object({
   username: yup
     .string()
-    .required('Required')
-    .max(20, 'Must be at most 20 characters')
-    .min(3, 'Must be at least 3 characters')
+    .required("Required")
+    .max(20, "Must be at most 20 characters")
+    .min(3, "Must be at least 3 characters")
     .matches(
       /^[a-zA-Z0-9-_]*$/,
-      'Only alphanum, dash & underscore characters are allowed'
+      "Only alphanum, dash & underscore characters are allowed"
     ),
   password: yup
     .string()
-    .required('Required')
-    .min(6, 'Must be at least 6 characters'),
+    .required("Required")
+    .min(6, "Must be at least 6 characters"),
   confirmPassword: yup
     .string()
-    .required('Required')
-    .min(6, 'Must be at least 6 characters'),
+    .required("Required")
+    .min(6, "Must be at least 6 characters"),
 });
 
 const RegisterForm = ({ setAuthType, closeModal }) => {
@@ -54,7 +54,7 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
   const { setUser } = useAuthContext();
   const { notify } = useStateContext();
   const { register, handleSubmit, reset, errors } = useForm({
-    mode: 'onTouched',
+    mode: "onTouched",
     resolver: yupResolver(validationSchema),
   });
 
@@ -66,7 +66,7 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
 
   const onRegister = ({ username, password, confirmPassword }) => {
     if (password !== confirmPassword)
-      return setErrorMsg('Both passwords need to match.');
+      return setErrorMsg("Both passwords need to match.");
 
     registerUser({
       variables: { username, password },
@@ -95,8 +95,8 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
             label="Username"
             variant="outlined"
             size="small"
-            error={'username' in errors}
-            helperText={'username' in errors ? errors.username.message : ''}
+            error={"username" in errors}
+            helperText={"username" in errors ? errors.username.message : ""}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -112,12 +112,12 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
             fullWidth
             inputRef={register}
             name="password"
-            type={showPass ? 'text' : 'password'}
+            type={showPass ? "text" : "password"}
             label="Password"
             variant="outlined"
             size="small"
-            error={'password' in errors}
-            helperText={'password' in errors ? errors.password.message : ''}
+            error={"password" in errors}
+            helperText={"password" in errors ? errors.password.message : ""}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -147,13 +147,13 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
             fullWidth
             inputRef={register}
             name="confirmPassword"
-            type={showConfPass ? 'text' : 'password'}
+            type={showConfPass ? "text" : "password"}
             label="Confirm Password"
             variant="outlined"
             size="small"
-            error={'confirmPassword' in errors}
+            error={"confirmPassword" in errors}
             helperText={
-              'confirmPassword' in errors ? errors.confirmPassword.message : ''
+              "confirmPassword" in errors ? errors.confirmPassword.message : ""
             }
             InputProps={{
               endAdornment: (
@@ -191,8 +191,8 @@ const RegisterForm = ({ setAuthType, closeModal }) => {
         </Button>
       </form>
       <Typography variant="body1" className={classes.footerText}>
-        Already have an account?{' '}
-        <Link onClick={() => setAuthType('login')} className={classes.link}>
+        Already have an account?{" "}
+        <Link onClick={() => setAuthType("login")} className={classes.link}>
           Log In
         </Link>
       </Typography>

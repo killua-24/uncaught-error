@@ -5,10 +5,10 @@ const customTheme = (darkMode) =>
     palette: {
       type: darkMode ? "dark" : "light",
       primary: {
-        main: darkMode ? "#Fb5662" : "#964ec2",
+        main: darkMode ? "#8a64dd" : "#7667EB",
       },
       secondary: {
-        main: darkMode ? "#f1f2f8" : "#562873",
+        main: darkMode ? "#f1f2f8" : "#1D1857",
       },
     },
     overrides: {
@@ -34,10 +34,15 @@ const customTheme = (darkMode) =>
       MuiChip: {
         root: {
           borderRadius: 3,
-          padding: "0px",
+          padding: "2px",
         },
         outlined: {
-          backgroundColor: darkMode ? "#feccd0" : "#964ec215",
+          backgroundColor: darkMode ? "#5c5c7a" : "#964ec215",
+        },
+      },
+      MuiPaper: {
+        root: {
+          backgroundColor: darkMode ? "#1a1a30" : "#F5F5F5",
         },
       },
     },

@@ -62,7 +62,7 @@ const QuesCard = ({ question }) => {
                 key={t}
                 label={t}
                 variant="outlined"
-                color="primary"
+                color="textSecondary"
                 size="small"
                 component={RouterLink}
                 to={`/tags/${t}`}

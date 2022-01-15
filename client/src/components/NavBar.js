@@ -84,7 +84,7 @@ const NavBar = () => {
                 {!isMobile && (
                   <Typography variant="caption" color="secondary">
                     | Made with{" "}
-                    <FavoriteIcon style={{ fontSize: 10, color: "#f4649f" }} />{" "}
+                    <FavoriteIcon style={{ fontSize: 10, color: "#fb5662" }} />{" "}
                     by
                     <Link
                       href={"https://github.com/killua-24"}

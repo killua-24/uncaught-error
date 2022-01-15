@@ -8,6 +8,7 @@ export const useBodyStyles = makeStyles(
       flexDirection: "column",
       flex: 1,
       minHeight: "100vH",
+      backgroundColor: "ffffff",
     },
   }),
   { index: 1 }
@@ -39,7 +40,7 @@ export const useNavStyles = makeStyles(
       alignItems: "center",
     },
     appBar: {
-      borderTop: "4px solid #f4649f",
+      borderTop: "4px solid #fb5662",
     },
     searchBar: {
       flexGrow: 0.6,

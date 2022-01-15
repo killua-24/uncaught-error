@@ -1,5 +1,5 @@
-import { ButtonGroup, Button } from '@material-ui/core';
-import { useQuesListStyles } from '../styles/muiStyles';
+import { ButtonGroup, Button } from "@material-ui/core";
+import { useQuesListStyles } from "../styles/muiStyles";
 
 const SortQuesBar = ({ isMobile, sortBy, setSortBy }) => {
   const classes = useQuesListStyles();
@@ -13,35 +13,35 @@ const SortQuesBar = ({ isMobile, sortBy, setSortBy }) => {
       <ButtonGroup
         color="secondary"
         disableElevation
-        size={isMobile ? 'small' : 'medium'}
+        size={isMobile ? "small" : "medium"}
         fullWidth={isMobile}
       >
         <Button
-          variant={sortBy === 'HOT' ? 'contained' : 'outlined'}
+          variant={sortBy === "HOT" ? "contained" : "outlined"}
           onClick={handleSortChange}
         >
           Hot
         </Button>
         <Button
-          variant={sortBy === 'VOTES' ? 'contained' : 'outlined'}
+          variant={sortBy === "VOTES" ? "contained" : "outlined"}
           onClick={handleSortChange}
         >
           Votes
         </Button>
         <Button
-          variant={sortBy === 'VIEWS' ? 'contained' : 'outlined'}
+          variant={sortBy === "VIEWS" ? "contained" : "outlined"}
           onClick={handleSortChange}
         >
           Views
         </Button>
         <Button
-          variant={sortBy === 'NEWEST' ? 'contained' : 'outlined'}
+          variant={sortBy === "NEWEST" ? "contained" : "outlined"}
           onClick={handleSortChange}
         >
           Newest
         </Button>
         <Button
-          variant={sortBy === 'OLDEST' ? 'contained' : 'outlined'}
+          variant={sortBy === "OLDEST" ? "contained" : "outlined"}
           onClick={handleSortChange}
         >
           Oldest
